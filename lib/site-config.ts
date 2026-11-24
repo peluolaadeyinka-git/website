@@ -49,7 +49,7 @@ export const siteConfig = {
 
   /** Add the URL for each profile; entries with an empty href show as "coming soon". */
   socials: [
-    { label: 'LinkedIn', href: '' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adeyinka-peluola-009978102?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
     { label: 'X / Twitter', href: '' },
     { label: 'Instagram', href: '' },
     { label: 'Facebook', href: '' },
@@ -57,10 +57,10 @@ export const siteConfig = {
 
   /** Replace the bracketed values once confirmed. */
   stats: [
-    { value: '[0+]', label: 'Years of Experience' },
-    { value: '[0+]', label: 'Projects Delivered' },
-    { value: '[0+]', label: 'Happy Clients' },
-    { value: '[0+]', label: 'Countries Served' },
+    { value: '7+', label: 'Years of Experience' },
+    { value: '100+', label: 'Projects Delivered' },
+    { value: '60+', label: 'Happy Clients' },
+    { value: '10+', label: 'Countries Served' },
   ],
 
   /** Extra options shown after the service list in the inquiry dropdown. */
