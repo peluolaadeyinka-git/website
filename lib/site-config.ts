@@ -13,7 +13,7 @@ export const siteConfig = {
     'Independent writer, digital marketer, and customer support professional helping individuals and businesses worldwide communicate effectively, grow online, and deliver better customer experiences.',
   /** Replace with your live domain before launching. */
   url: 'https://your-domain.com',
-  location: 'Nigeria · Working Worldwide',
+  location: 'Working Worldwide',
   availability: 'Available for New Projects',
   responseTimeShort: 'Replies within 24 hours',
   responseTime: 'Typically responds within 24 hours',
