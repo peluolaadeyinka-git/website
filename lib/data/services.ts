@@ -109,7 +109,12 @@ export const services: Service[] = [
         icon: FileText,
         body: 'Kindly send the topic for the essay and the requirements to follow. You can also send me a file containing the prompt or requirements via email or Whatsapp',
       },
-      { id: 'timeframe', title: 'Delivery timeframe', icon: Clock },
+      {
+        id: 'timeframe',
+        title: 'Delivery timeframe',
+        icon: Clock,
+        body: 'Turnaround time is 2 to 7 days for essays ranging from 300 to 3,000 words.',
+      },
     ],
     packages: [],
     faqs: [],
