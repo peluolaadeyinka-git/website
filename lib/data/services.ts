@@ -77,7 +77,16 @@ export const services: Service[] = [
       'Successful writing needs to be well researched, structured, and formatted. Researching involves reading, and understanding the source materials and writing great content based on the sources. The structuring aspect involves organizing the introduction, body, and conclusion. Formatting involves following the rules of the writing style (Mla, Apa, etc.) one had chosen for the essay. All these makes my writing successful.',
     ],
     sections: [
-      { id: 'topics', title: 'Topics covered', icon: BookOpen },
+      {
+        id: 'topics',
+        title: 'Topics covered',
+        icon: BookOpen,
+        items: [
+          'History of any type.',
+          'International relation',
+          'Any Research.',
+        ],
+      },
       {
         id: 'approach',
         title: 'Research and writing approach',
