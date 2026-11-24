@@ -40,11 +40,11 @@ export const siteConfig = {
 
   contact: {
     /** e.g. 'hello@yourdomain.com' */
-    email: '',
+    email: 'peluolaadeyinka@gmail.com',
     /** e.g. '+234 800 000 0000' */
-    phone: '',
+    phone: '2348069416146',
     /** Digits only, including country code, e.g. '2348000000000' — used for the wa.me link. */
-    whatsapp: '',
+    whatsapp: '2348069416146',
   },
 
   /** Add the URL for each profile; entries with an empty href show as "coming soon". */
