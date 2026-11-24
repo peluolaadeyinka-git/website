@@ -1,13 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { DM_Sans, Fraunces } from 'next/font/google'
+import { Geist, Geist_Mono } from 'next/font/google'
 import { siteConfig } from '@/lib/site-config'
 import { SiteHeader } from '@/components/site/site-header'
 import { SiteFooter } from '@/components/site/site-footer'
 import './globals.css'
 
-const bodyFont = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
-const displayFont = Fraunces({ subsets: ['latin'], variable: '--font-fraunces' })
+const geistSans = Geist({ subsets: ['latin'], variable: '--font-geist-sans' })
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 const title = `${siteConfig.ownerName} — ${siteConfig.role}`
 
@@ -15,12 +15,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: { default: title, template: `%s | ${siteConfig.brandName}` },
   description: siteConfig.description,
+  generator: 'v0.app',
   keywords: [
-    'essay writing',
-    'history and international relations',
-    'cryptocurrency whitepaper writing',
-    'organic digital promotion',
-    'customer support',
+    'freelancer',
+    'digital marketing',
+    'social media management',
+    'web design',
+    'content creation',
     'virtual assistant',
   ],
   openGraph: {
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.brandName,
     url: siteConfig.url,
+    images: [{ url: '/images/services/website-design-development.png', width: 1200, height: 675 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#f7f4ec',
+  themeColor: '#0f1630',
 }
 
 export default function RootLayout({
@@ -56,11 +58,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
-      <body>
+    <html lang="en" data-scroll-behavior="smooth" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-sm focus:bg-ink focus:px-4 focus:py-2 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
         >
           Skip to content
         </a>

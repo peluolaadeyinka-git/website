@@ -1,15 +1,29 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowUpRight, Check, MessageCircle } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+import {
+  ArrowUpRight,
+  Check,
+  CircleHelp,
+  Clock,
+  FileText,
+  Hourglass,
+  Layers,
+  MessageCircle,
+  Sparkles,
+  Wallet,
+} from 'lucide-react'
 import { getServiceBySlug, services, type ServiceSection } from '@/lib/data/services'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink } from '@/components/site/cta-link'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { ServiceCard } from '@/components/services/service-card'
 import { cn } from '@/lib/utils'
 
 type Params = { params: Promise<{ slug: string }> }
+
+const TO_BE_CONFIRMED = 'To be confirmed'
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
@@ -32,7 +46,7 @@ export default async function ServicePage({ params }: Params) {
   if (!service) notFound()
 
   const hireHref = `/?service=${service.slug}#contact`
-  const related = services.filter((s) => s.slug !== service.slug)
+  const related = services.filter((s) => s.slug !== service.slug).slice(0, 3)
   const whatsapp = whatsappLink(`Hi ${siteConfig.ownerName}, I'm interested in your "${service.title}" service.`)
 
   return (
@@ -44,22 +58,24 @@ export default async function ServicePage({ params }: Params) {
         description={service.shortDescription}
         image={service.image}
       >
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <CtaLink href={hireHref} size="lg">
-            Send a brief for this service
-            <ArrowUpRight />
+            Hire Me for This Service
+            <ArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </CtaLink>
-          <CtaLink href="#pricing" size="lg" variant="outline">
-            See pricing
+          <CtaLink href="#pricing" size="lg" variant="outlineLight">
+            Pricing & Packages
           </CtaLink>
         </div>
       </PageHero>
 
-      <div className="mx-auto grid max-w-7xl gap-14 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:px-8 md:py-24 lg:grid-cols-12">
         <div className="flex flex-col gap-14 lg:col-span-8">
           <section aria-labelledby="overview">
-            <SectionTitle id="overview">Service overview</SectionTitle>
-            <div className="measure mt-5 space-y-4 leading-relaxed text-muted-foreground">
+            <SectionTitle id="overview" icon={Sparkles}>
+              Service overview
+            </SectionTitle>
+            <div className="mt-4 space-y-4 leading-relaxed text-muted-foreground">
               {service.overview.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -71,51 +87,65 @@ export default async function ServicePage({ params }: Params) {
           ))}
 
           <section id="pricing" aria-labelledby="pricing-title" className="scroll-mt-24">
-            <SectionTitle id="pricing-title">Pricing</SectionTitle>
+            <SectionTitle id="pricing-title" icon={Wallet}>
+              Pricing and packages
+            </SectionTitle>
             {service.packages.length > 0 ? (
               <ul className="mt-6 grid gap-5 md:grid-cols-3">
                 {service.packages.map((pkg) => (
                   <li
                     key={pkg.name}
-                    className={cn('border border-ink/15 bg-card p-6', pkg.featured && 'border-rust')}
+                    className={cn(
+                      'relative flex flex-col rounded-3xl border bg-card p-6',
+                      pkg.featured && 'border-primary shadow-xl shadow-primary/10 ring-1 ring-primary',
+                    )}
                   >
                     {pkg.featured ? (
-                      <p className="text-xs font-medium tracking-[0.16em] text-rust uppercase">Most requested</p>
+                      <span className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                        Most popular
+                      </span>
                     ) : null}
-                    <h3 className="mt-2 font-display text-xl font-medium">{pkg.name}</h3>
-                    <p className="mt-4 font-display text-3xl">{pkg.price}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{pkg.delivery}</p>
-                    <ul className="mt-6 mb-8 space-y-2 text-sm">
+                    <h3 className="font-semibold">{pkg.name}</h3>
+                    <p className="mt-3 text-3xl font-semibold tracking-tight">{pkg.price}</p>
+                    <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Clock className="size-3.5" aria-hidden="true" />
+                      {pkg.delivery}
+                    </p>
+                    <ul className="mt-6 mb-8 flex flex-col gap-2.5 text-sm">
                       {pkg.features.map((f) => (
                         <li key={f} className="flex items-start gap-2">
-                          <Check className="mt-0.5 size-4 shrink-0 text-rust" aria-hidden="true" />
+                          <Check className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
                           {f}
                         </li>
                       ))}
                     </ul>
-                    <CtaLink href={hireHref} variant={pkg.featured ? 'primary' : 'outline'} className="w-full">
+                    <CtaLink href={hireHref} variant={pkg.featured ? 'primary' : 'outline'} className="mt-auto w-full">
                       Choose {pkg.name}
                     </CtaLink>
                   </li>
                 ))}
               </ul>
             ) : (
-              <div className="mt-6 border-l-2 border-rust bg-muted/40 p-6 md:p-8">
-                <p className="font-display text-xl">Priced per project.</p>
-                <p className="measure mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Every brief is different. Share your requirements and I&apos;ll reply with a quote and a date.
-                </p>
-                <CtaLink href={hireHref} className="mt-5">
-                  Request a quote
+              <div className="mt-6 flex flex-col items-start gap-5 rounded-3xl border bg-gradient-to-br from-accent to-card p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
+                <div>
+                  <p className="font-semibold">Pricing and packages coming soon</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    Every project is different. Share your requirements and I&apos;ll send you a tailored quote.
+                  </p>
+                </div>
+                <CtaLink href={hireHref} className="shrink-0">
+                  Request a Quote
                 </CtaLink>
               </div>
             )}
           </section>
 
           <section aria-labelledby="faq">
-            <SectionTitle id="faq">Questions</SectionTitle>
+            <SectionTitle id="faq" icon={CircleHelp}>
+              Frequently asked questions
+            </SectionTitle>
             {service.faqs.length > 0 ? (
-              <Accordion className="mt-6 border border-ink/15 bg-card px-6">
+              <Accordion className="mt-6 rounded-3xl border bg-card px-6">
                 {service.faqs.map((faq, i) => (
                   <AccordionItem key={faq.question} value={`faq-${i}`}>
                     <AccordionTrigger className="py-5 text-base hover:no-underline">{faq.question}</AccordionTrigger>
@@ -124,30 +154,28 @@ export default async function ServicePage({ params }: Params) {
                 ))}
               </Accordion>
             ) : (
-              <p className="measure mt-5 text-base leading-relaxed text-muted-foreground">
-                If you have a question before getting in touch, include it in your brief and I&apos;ll answer it with your quote.
-              </p>
+              <ComingSoon />
             )}
           </section>
         </div>
 
         <aside className="lg:col-span-4">
-          <div className="border border-ink/15 bg-card p-6 lg:sticky lg:top-24">
-            <h2 className="font-display text-xl font-medium">Service summary</h2>
+          <div className="sticky top-24 rounded-3xl border bg-card p-6 shadow-xl shadow-navy/5">
+            <h2 className="font-semibold">Service summary</h2>
             <dl className="mt-5 flex flex-col divide-y text-sm">
-              <SummaryRow label="Starting at" value={service.startingPrice ?? 'By quote'} />
-              <SummaryRow label="Delivery" value={service.deliveryTime ?? 'Depends on scope'} />
-              <SummaryRow label="Category" value={service.category} />
+              <SummaryRow icon={Wallet} label="Starting at" value={service.startingPrice ?? TO_BE_CONFIRMED} />
+              <SummaryRow icon={Hourglass} label="Delivery" value={service.deliveryTime ?? TO_BE_CONFIRMED} />
+              <SummaryRow icon={Layers} label="Category" value={service.category} />
             </dl>
             <CtaLink href={hireHref} size="lg" className="mt-6 w-full">
-              Send a brief
+              Hire Me for This Service
             </CtaLink>
             {whatsapp ? (
               <a
                 href={whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex h-12 w-full items-center justify-center gap-2 border border-ink/20 text-sm font-medium transition-colors hover:border-rust hover:text-rust"
+                className="mt-3 flex h-12 w-full items-center justify-center gap-2 rounded-full border text-sm font-medium transition-colors hover:border-emerald-500 hover:text-emerald-700"
               >
                 <MessageCircle className="size-4" aria-hidden="true" />
                 Ask on WhatsApp
@@ -159,21 +187,15 @@ export default async function ServicePage({ params }: Params) {
       </div>
 
       {related.length > 0 ? (
-        <section className="border-t border-ink/10 bg-secondary/40 py-16 md:py-20" aria-labelledby="related">
+        <section className="border-t bg-muted/60 py-16 md:py-20" aria-labelledby="related">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
-            <h2 id="related" className="font-display text-2xl font-medium md:text-3xl">
+            <h2 id="related" className="text-2xl font-semibold tracking-tight md:text-3xl">
               Other services
             </h2>
-            <ul className="mt-8">
+            <ul className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {related.map((s) => (
                 <li key={s.slug}>
-                  <Link
-                    href={`/services/${s.slug}`}
-                    className="flex items-center justify-between gap-4 border-b border-ink/10 py-6 font-display text-lg transition-colors hover:text-rust"
-                  >
-                    {s.title}
-                    <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
-                  </Link>
+                  <ServiceCard service={s} />
                 </li>
               ))}
             </ul>
@@ -184,9 +206,12 @@ export default async function ServicePage({ params }: Params) {
   )
 }
 
-function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
+function SectionTitle({ id, icon: Icon, children }: { id: string; icon: LucideIcon; children: React.ReactNode }) {
   return (
-    <h2 id={id} className="font-display text-2xl leading-snug font-medium tracking-tight md:text-3xl">
+    <h2 id={id} className="flex items-center gap-3 text-2xl font-semibold tracking-tight md:text-3xl">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+        <Icon className="size-5" aria-hidden="true" />
+      </span>
       {children}
     </h2>
   )
@@ -194,20 +219,24 @@ function SectionTitle({ id, children }: { id: string; children: React.ReactNode 
 
 function DetailSection({ section }: { section: ServiceSection }) {
   const titleId = `${section.id}-title`
-  const hasItems = Boolean(section.items?.length)
+  const hasItems = section.items && section.items.length > 0
+  const isEmpty = !section.body && !hasItems
 
   return (
     <section id={section.id} aria-labelledby={titleId} className="scroll-mt-24">
-      <SectionTitle id={titleId}>{section.title}</SectionTitle>
-      {section.body ? <p className="measure mt-4 leading-relaxed text-muted-foreground">{section.body}</p> : null}
+      <SectionTitle id={titleId} icon={section.icon}>
+        {section.title}
+      </SectionTitle>
+      {isEmpty ? <ComingSoon /> : null}
+      {section.body ? <p className="mt-4 leading-relaxed text-muted-foreground">{section.body}</p> : null}
       {hasItems ? (
-        <ul className="mt-5 space-y-2.5 text-sm">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
           {section.items!.map((item) => (
-            <li key={item} className="flex gap-3">
-              <span className="text-rust" aria-hidden="true">
-                —
+            <li key={item} className="flex items-start gap-3 rounded-2xl border bg-card p-4">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                <Check className="size-3.5" aria-hidden="true" />
               </span>
-              <span className="leading-relaxed">{item}</span>
+              <span className="text-sm leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -216,10 +245,22 @@ function DetailSection({ section }: { section: ServiceSection }) {
   )
 }
 
-function SummaryRow({ label, value }: { label: string; value: string }) {
+function ComingSoon() {
+  return (
+    <p className="mt-5 flex items-center gap-2.5 rounded-2xl border border-dashed bg-muted/40 px-5 py-4 text-sm text-muted-foreground">
+      <FileText className="size-4 shrink-0 text-primary" aria-hidden="true" />
+      Details for this section are coming soon.
+    </p>
+  )
+}
+
+function SummaryRow({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-4 py-3.5">
-      <dt className="text-muted-foreground">{label}</dt>
+      <dt className="flex items-center gap-2 text-muted-foreground">
+        <Icon className="size-4" aria-hidden="true" />
+        {label}
+      </dt>
       <dd className="text-right font-medium">{value}</dd>
     </div>
   )

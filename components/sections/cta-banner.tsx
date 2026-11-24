@@ -3,9 +3,9 @@ import { CtaLink } from '@/components/site/cta-link'
 
 export function CtaBanner({
   title = 'Have a project in mind?',
-  description = "Send a short brief and I'll reply with next steps.",
+  description = "Let's talk about your goals and how I can help you reach them.",
   href = '/#contact',
-  label = 'Send a brief',
+  label = 'Start a Project',
 }: {
   title?: string
   description?: string
@@ -14,16 +14,13 @@ export function CtaBanner({
 }) {
   return (
     <section className="px-5 py-16 md:px-8 md:py-20">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 border-y border-ink/15 py-12 md:flex-row md:items-end md:justify-between md:py-14">
-        <div>
-          <h2 className="max-w-2xl font-display text-3xl leading-tight font-medium tracking-tight text-balance md:text-4xl">
-            {title}
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">{description}</p>
-        </div>
-        <CtaLink href={href} size="lg">
+      <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-navy px-6 py-14 text-center text-white md:px-16 md:py-20">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,oklch(0.54_0.22_277/0.45),transparent_65%)]" aria-hidden="true" />
+        <h2 className="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance md:text-5xl">{title}</h2>
+        <p className="mx-auto mt-4 max-w-xl text-navy-muted md:text-lg">{description}</p>
+        <CtaLink href={href} size="lg" variant="light" className="mt-8">
           {label}
-          <ArrowUpRight />
+          <ArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </CtaLink>
       </div>
     </section>

@@ -1,45 +1,53 @@
 /**
- * One place for the site's real details. Empty fields are hidden on the site
- * rather than shown as "coming soon" placeholders.
+ * Central place for your personal & business details.
+ * Fields left as '' (empty) are shown as "coming soon" placeholders
+ * on the site until you fill them in.
  */
 export const siteConfig = {
   brandName: 'Adeyinka Peluola',
   ownerName: 'Adeyinka Peluola',
-  initials: 'AP',
-  role: 'Writer & digital services',
-  headline: 'Writing · Research · Organic promotion · Customer support',
+  initials: 'YN',
+  role: 'Digital Services Professional',
+  headline: 'Writer · Digital Marketer · Customer Support Professional',
   description:
-    'I write researched essays and business documents, help artists and small businesses get found online, and handle written customer support. Based in Nigeria, working with clients worldwide.',
+    'Independent writer, digital marketer, and customer support professional helping individuals and businesses worldwide communicate effectively, grow online, and deliver better customer experiences.',
+  /** Replace with your live domain before launching. */
   url: 'https://your-domain.com',
-  location: 'Nigeria · Working worldwide',
-  availability: 'Available for new projects',
+  location: 'Nigeria · Working Worldwide',
+  availability: 'Available for New Projects',
   responseTimeShort: 'Replies within 24 hours',
-  responseTime: 'Typically replies within 24 hours',
+  responseTime: 'Typically responds within 24 hours',
 
   hero: {
     intro: [
-      'I help with work that needs care: researched essays and whitepapers, clear business writing, and steady written support for customers.',
-      'I also promote music and creative work organically. One brief, clear expectations, and work you can actually use.',
+      "I'm a writer, digital marketer, and customer support professional helping individuals and businesses communicate effectively, strengthen their online presence, and deliver better customer experiences.",
+      'From professional writing and research to digital promotion and customer support, I provide reliable digital solutions tailored to your needs.',
     ],
   },
 
   about: {
-    title: 'A writer who pays attention to the small things.',
+    title: 'A dedicated professional focused on helping you succeed.',
     bio: [
-      "I'm Adeyinka Peluola. Most of my work is writing: history and international relations essays, research pieces, cryptocurrency whitepapers, and formal business correspondence. I research first, then write for the person who will actually read it.",
-      'Alongside writing, I help artists and small businesses get more eyes on their work through organic promotion, and I support customers by email and chat with patience and clear answers.',
-      "I work from Nigeria with clients worldwide. I keep projects manageable: agree on the brief, check in when it matters, and hand over work that's ready to use.",
+      "Hello, I'm Adeyinka Peluola — a communicator, professional writer, and digital marketing enthusiast with experience across writing, customer support, and digital marketing.",
+      'My background combines strong communication skills, research, creative thinking, and a practical understanding of digital platforms. I enjoy helping individuals and businesses communicate their ideas effectively, reach their target audiences, and solve everyday business challenges through digital solutions.',
+      'As a writer, I work across many forms of content, including articles, cryptocurrency whitepapers, research essays, formal business correspondence, and general content writing.',
+      'In digital marketing, I focus on organic promotional strategies — helping music artists, content creators, and businesses improve the visibility and reach of their content across relevant digital and streaming platforms.',
+      'I also bring customer support experience and understand the importance of professionalism, responsiveness, patience, and customer satisfaction in every client interaction.',
     ],
     approach:
-      "Good work is mostly good questions. I ask what the piece is for, who will read it, and what 'done' looks like before I start.",
+      "My approach is simple: understand the client's needs, communicate clearly, pay attention to detail, and deliver quality work within the agreed timeframe. Every project deserves commitment, professionalism, and top-notch delivery.",
   },
 
   contact: {
+    /** e.g. 'hello@yourdomain.com' */
     email: '',
+    /** e.g. '+234 800 000 0000' */
     phone: '',
+    /** Digits only, including country code, e.g. '2348000000000' — used for the wa.me link. */
     whatsapp: '',
   },
 
+  /** Add the URL for each profile; entries with an empty href show as "coming soon". */
   socials: [
     { label: 'LinkedIn', href: '' },
     { label: 'X / Twitter', href: '' },
@@ -47,6 +55,15 @@ export const siteConfig = {
     { label: 'Facebook', href: '' },
   ],
 
+  /** Replace the bracketed values once confirmed. */
+  stats: [
+    { value: '[0+]', label: 'Years of Experience' },
+    { value: '[0+]', label: 'Projects Delivered' },
+    { value: '[0+]', label: 'Happy Clients' },
+    { value: '[0+]', label: 'Countries Served' },
+  ],
+
+  /** Extra options shown after the service list in the inquiry dropdown. */
   extraInquiryOptions: ['Other Writing Services', 'Digital Marketing and Promotion', 'General Inquiry'],
 
   budgets: ['Under $100', '$100 – $250', '$250 – $500', '$500 – $1,000', '$1,000+', 'Not sure yet — request a quote'],
@@ -54,13 +71,14 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: 'Home', href: '/#home' },
-  { label: 'About', href: '/#about' },
+  { label: 'About Me', href: '/#about' },
   { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/#portfolio' },
   { label: 'Skills', href: '/#skills' },
   { label: 'Contact', href: '/#contact' },
 ]
 
-export const contactPlaceholder = 'Not added yet'
+export const contactPlaceholder = 'Coming soon'
 
 export function whatsappLink(message?: string) {
   if (!siteConfig.contact.whatsapp) return null
