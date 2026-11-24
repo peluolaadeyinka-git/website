@@ -63,7 +63,7 @@ export function Hero() {
         <div className="animate-in fade-in slide-in-from-bottom-6 relative mx-auto w-full max-w-md duration-1000 lg:col-span-5 lg:max-w-none">
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-primary/40 to-blue-500/20 blur-2xl" aria-hidden="true" />
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-2.5 backdrop-blur">
-            <ProfilePhoto priority className="aspect-[4/5] rounded-[1.6rem]" />
+            <ProfilePhoto priority src="/images/Hero.jpg" className="aspect-[4/5] rounded-[1.6rem]" />
           </div>
 
           <div className="absolute -left-4 top-10 hidden rounded-2xl border border-white/10 bg-navy/80 p-3.5 shadow-2xl backdrop-blur-xl sm:flex sm:items-center sm:gap-3 md:-left-10">

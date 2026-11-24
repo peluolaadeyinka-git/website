@@ -12,17 +12,19 @@ const PROFILE_PHOTO_SRC: string | null = null
 export function ProfilePhoto({
   className,
   priority,
+  src = PROFILE_PHOTO_SRC,
   sizes = '(min-width: 1024px) 420px, 80vw',
 }: {
   className?: string
   priority?: boolean
+  src?: string | null
   sizes?: string
 }) {
   return (
     <div className={cn('relative overflow-hidden', className)}>
-      {PROFILE_PHOTO_SRC ? (
+      {src ? (
         <Image
-          src={PROFILE_PHOTO_SRC}
+          src={src}
           alt={`Portrait of ${siteConfig.ownerName}`}
           fill
           priority={priority}
