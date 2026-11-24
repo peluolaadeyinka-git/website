@@ -72,8 +72,9 @@ export const services: Service[] = [
     shortDescription:
       'Get a well-researched, clearly structured, and professionally written essay on history, international relations, and related subjects.',
     overview: [
-      'Get a well-researched, clearly structured, and professionally written essay on history, international relations, and related subjects.',
-      'Each essay is built on careful research, sound analysis, and clear, engaging writing — tailored to your topic, audience, and requirements.',
+      'Being a professional research writer, I can help you write or rewrite your HISTORY AND INTERNATIONAL RELATIONSHIP RESEARCH with ZERO PLAGIARISM.',
+      'I am a professional freelance writer with lots of experience, and I have worked with clients across every primary vertical service.',
+      'Successful writing needs to be well researched, structured, and formatted. Researching involves reading, and understanding the source materials and writing great content based on the sources. The structuring aspect involves organizing the introduction, body, and conclusion. Formatting involves following the rules of the writing style (Mla, Apa, etc.) one had chosen for the essay. All these makes my writing successful.',
     ],
     sections: [
       { id: 'topics', title: 'Topics covered', icon: BookOpen },
