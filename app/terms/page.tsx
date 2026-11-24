@@ -1,18 +1,34 @@
 import type { Metadata } from 'next'
 import { LegalPage } from '@/components/site/legal-page'
 
-export const metadata: Metadata = { title: 'Terms of Service' }
+export const metadata: Metadata = { title: 'Terms' }
 
 export default function TermsPage() {
   return (
     <LegalPage
-      title="Terms of Service"
+      title="Terms"
+      description="The basic terms for projects started through this site."
       sections={[
-        { heading: 'Services', body: '[Placeholder] Describe the scope of services and how projects are agreed upon.' },
-        { heading: 'Payments', body: '[Placeholder] Outline payment terms, deposits, and accepted payment methods.' },
-        { heading: 'Revisions & delivery', body: '[Placeholder] Explain revision policies and delivery timelines.' },
-        { heading: 'Cancellations & refunds', body: '[Placeholder] State your cancellation and refund policy.' },
-        { heading: 'Intellectual property', body: '[Placeholder] Clarify ownership of delivered work.' },
+        {
+          heading: 'How a project starts',
+          body: 'We agree on the brief first: what is needed, who it is for, the deadline, and the price. Work begins once those details are confirmed in writing.',
+        },
+        {
+          heading: 'Pricing and payment',
+          body: 'Your quote sets out the price and payment terms for your project. Anything outside the agreed brief is quoted separately before extra work begins.',
+        },
+        {
+          heading: 'Delivery and changes',
+          body: 'Writing projects include one round of changes after delivery. The agreed format and handover date are stated in your brief.',
+        },
+        {
+          heading: 'Ownership',
+          body: 'Ownership of the final work and any limits on its use are stated in your quote. Until then, please treat drafts as working material.',
+        },
+        {
+          heading: 'Cancellation',
+          body: 'If you need to cancel, tell me in writing. Work already completed is billed according to the agreed quote.',
+        },
       ]}
     />
   )

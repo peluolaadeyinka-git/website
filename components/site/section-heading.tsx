@@ -18,11 +18,11 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
+    <div className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', className)}>
       <p
         className={cn(
-          'inline-flex items-center gap-2 font-mono text-xs font-medium tracking-widest uppercase',
-          tone === 'dark' ? 'text-blue-300' : 'text-primary',
+          'flex items-center gap-3 text-xs font-medium tracking-[0.18em] uppercase',
+          tone === 'dark' ? 'text-navy-muted' : 'text-rust',
         )}
       >
         <span className="h-px w-6 bg-current" aria-hidden="true" />
@@ -30,8 +30,8 @@ export function SectionHeading({
       </p>
       <h2
         className={cn(
-          'mt-4 text-3xl font-semibold tracking-tight text-balance md:text-4xl lg:text-5xl',
-          tone === 'dark' ? 'text-white' : 'text-foreground',
+          'mt-5 font-display text-4xl leading-[1.08] font-medium tracking-tight text-balance md:text-5xl lg:text-[3.5rem]',
+          tone === 'dark' ? 'text-paper' : 'text-ink',
         )}
       >
         {title}
@@ -39,7 +39,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            'mt-4 text-base leading-relaxed text-pretty md:text-lg',
+            'measure mt-5 text-base leading-relaxed md:text-lg',
             tone === 'dark' ? 'text-navy-muted' : 'text-muted-foreground',
           )}
         >

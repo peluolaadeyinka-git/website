@@ -11,9 +11,9 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 
 const fieldClass =
-  'h-12 w-full min-w-0 rounded-xl border border-input bg-background px-4 text-base outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm'
+  'h-12 w-full min-w-0 rounded-sm border border-input bg-paper px-4 text-base outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-rust focus-visible:ring-2 focus-visible:ring-rust/30 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 md:text-sm'
 const selectClass =
-  'h-12 w-full appearance-none rounded-xl border border-input bg-background bg-[url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27none%27 stroke=%27%236b7280%27 stroke-width=%272%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27m6 9 6 6 6-6%27/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat px-4 pr-10 text-base outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive md:text-sm'
+  'h-12 w-full appearance-none rounded-sm border border-input bg-paper bg-[url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2716%27 height=%2716%27 fill=%27none%27 stroke=%27%236b7280%27 stroke-width=%272%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27m6 9 6 6 6-6%27/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat px-4 pr-10 text-base outline-none transition-colors focus-visible:border-rust focus-visible:ring-2 focus-visible:ring-rust/30 aria-invalid:border-destructive md:text-sm'
 
 function composeMessage(v: InquiryFields) {
   return [
@@ -52,7 +52,7 @@ export function ContactForm() {
       key={`${preselected}:${values ? JSON.stringify(values) : ''}`}
     >
       {preselected ? (
-        <p className="flex items-center gap-2 rounded-xl border border-primary/20 bg-accent px-4 py-3 text-sm text-accent-foreground">
+        <p className="flex items-center gap-2 border-l-2 border-rust bg-muted px-4 py-3 text-sm">
           <CircleCheck className="size-4 shrink-0" aria-hidden="true" />
           Inquiry for: <strong className="font-semibold">{preselected}</strong>
         </p>
@@ -111,7 +111,7 @@ export function ContactForm() {
           defaultValue={values?.message}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? 'message-error' : undefined}
-          className="min-h-36 rounded-xl bg-background px-4 py-3 text-base md:text-sm"
+          className="min-h-36 rounded-sm bg-paper px-4 py-3 text-base md:text-sm"
           required
         />
       </Field>
@@ -119,7 +119,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-7 font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:bg-primary/90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-70"
+        className="group inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-ink bg-ink px-6 font-medium text-paper transition-colors hover:border-rust hover:bg-rust focus-visible:ring-2 focus-visible:ring-rust/50 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-70"
       >
         {pending ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : null}
         {pending ? 'Submitting…' : 'Submit Inquiry'}
@@ -128,7 +128,7 @@ export function ContactForm() {
 
       <div aria-live="polite">
         {state.status === 'not_connected' ? (
-          <div className="rounded-2xl border border-amber-300/60 bg-amber-50 p-5 text-sm text-amber-950">
+          <div className="border-l-2 border-amber-600 bg-amber-50/60 p-5 text-sm text-amber-950">
             <p className="flex items-start gap-2 font-semibold">
               <AlertTriangle className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
               Your inquiry has not been sent yet.
@@ -155,7 +155,7 @@ export function ContactForm() {
                     {mail ? (
                       <a
                         href={mail}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 font-medium text-white transition-colors hover:bg-navy/90"
+                        className="inline-flex items-center gap-1.5 rounded-sm bg-ink px-4 py-2 font-medium text-paper transition-colors hover:bg-rust"
                       >
                         <Mail className="size-4" aria-hidden="true" />
                         Send via Email
@@ -166,7 +166,7 @@ export function ContactForm() {
                         href={whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2 font-medium text-white transition-colors hover:bg-emerald-700"
+                        className="inline-flex items-center gap-1.5 rounded-sm border border-emerald-700 px-4 py-2 font-medium text-emerald-800 transition-colors hover:bg-emerald-50"
                       >
                         <MessageCircle className="size-4" aria-hidden="true" />
                         Send via WhatsApp
@@ -179,7 +179,7 @@ export function ContactForm() {
           </div>
         ) : null}
         {state.status === 'success' ? (
-          <p className="flex items-center gap-2 rounded-2xl border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
+          <p className="flex items-center gap-2 border-l-2 border-emerald-700 bg-emerald-50/60 p-4 text-sm text-emerald-900">
             <CircleCheck className="size-4" aria-hidden="true" />
             Thanks! Your inquiry was sent. I&apos;ll get back to you soon.
           </p>
