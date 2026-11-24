@@ -12,7 +12,7 @@ export function About() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal className="relative order-last lg:sticky lg:top-28 lg:order-first">
-            <ProfilePhoto className="aspect-[4/5] w-full max-w-lg rounded-3xl shadow-2xl shadow-navy/20" />
+            <ProfilePhoto src="/images/about-me.jpg" className="aspect-[4/5] w-full max-w-lg rounded-3xl shadow-2xl shadow-navy/20" />
             <div className="absolute -right-2 -bottom-6 flex items-center gap-3 rounded-2xl border bg-card p-4 shadow-xl sm:right-6 lg:-right-8">
               <span className="flex size-10 items-center justify-center rounded-xl bg-accent text-accent-foreground">
                 <Clock className="size-5" aria-hidden="true" />
