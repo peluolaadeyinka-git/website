@@ -103,7 +103,15 @@ export const services: Service[] = [
           'Quick response and delivery time.',
         ],
       },
-      { id: 'requirements', title: 'Project requirements', icon: FileText },
+      {
+        id: 'requirements',
+        title: 'Project requirements',
+        icon: FileText,
+        items: [
+          'Kindly send the topic for the essay and the requirements to follow',
+          'You can also send me a file containing the prompt or requirements via email or Whatsapp',
+        ],
+      },
       { id: 'timeframe', title: 'Delivery timeframe', icon: Clock },
     ],
     packages: [],
