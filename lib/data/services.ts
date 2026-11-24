@@ -84,7 +84,16 @@ export const services: Service[] = [
         icon: Microscope,
         body: 'I will search out the sources and information from the internet, read and understand them well, then write in my own words. I can also make use any source you give me.',
       },
-      { id: 'receives', title: 'What you receive', icon: Package },
+      {
+        id: 'receives',
+        title: 'What you receive',
+        icon: Package,
+        items: [
+          'Plagiarism Free Research.',
+          'Well researched and unique content.',
+          'Quick response and delivery time.',
+        ],
+      },
       { id: 'requirements', title: 'Project requirements', icon: FileText },
       { id: 'timeframe', title: 'Delivery timeframe', icon: Clock },
     ],
