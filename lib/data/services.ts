@@ -78,7 +78,12 @@ export const services: Service[] = [
     ],
     sections: [
       { id: 'topics', title: 'Topics covered', icon: BookOpen },
-      { id: 'approach', title: 'Research and writing approach', icon: Microscope },
+      {
+        id: 'approach',
+        title: 'Research and writing approach',
+        icon: Microscope,
+        body: 'I will search out the sources and information from the internet, read and understand them well, then write in my own words. I can also make use any source you give me.',
+      },
       { id: 'receives', title: 'What you receive', icon: Package },
       { id: 'requirements', title: 'Project requirements', icon: FileText },
       { id: 'timeframe', title: 'Delivery timeframe', icon: Clock },
