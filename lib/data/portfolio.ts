@@ -22,12 +22,13 @@ export type PortfolioGroup = {
  * matching category. If you add a new service category in lib/data/services.ts,
  * add a matching group here too.
  *
- * Example sample:
+ * Example writing sample — `href` is the Google Doc share link and `image` is
+ * a local preview image of that document:
  * {
  *   title: 'History essay sample',
  *   description: 'A 1,500-word research essay on a modern history topic.',
  *   image: '/images/portfolio/history-essay.png',
- *   href: '/samples/history-essay.pdf',
+ *   href: 'https://docs.google.com/document/d/YOUR_DOC_ID/edit?usp=sharing',
  * },
  */
 export const portfolioGroups: PortfolioGroup[] = [
