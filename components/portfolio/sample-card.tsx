@@ -6,6 +6,11 @@ export function SampleCard({ sample }: { sample: PortfolioSample }) {
   const content = (
     <>
       <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-muted">
+        {sample.format ? (
+          <span className="absolute top-4 left-4 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-navy backdrop-blur">
+            {sample.format}
+          </span>
+        ) : null}
         {sample.image ? (
           <Image
             src={sample.image}
