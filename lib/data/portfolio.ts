@@ -47,6 +47,13 @@ export const portfolioGroups: PortfolioGroup[] = [
         image: 'https://drive.google.com/thumbnail?id=1_xBnHXzHKur4eqIOdpyiGVSFTQOAMDnw&sz=w1200',
         href: 'https://docs.google.com/document/d/1_xBnHXzHKur4eqIOdpyiGVSFTQOAMDnw/edit?usp=sharing&ouid=112780875442452601283&rtpof=true&sd=true',
       },
+      {
+        title: 'Article Sample',
+        description: 'An article writing sample',
+        format: 'LinkedIn Post',
+        image: 'https://drive.google.com/thumbnail?id=1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw&sz=w1200',
+        href: 'https://docs.google.com/document/d/1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw/edit?usp=sharing',
+      },
     ],
   },
   {
