@@ -4,7 +4,7 @@
  * on the site until you fill them in.
  */
 export const siteConfig = {
-  brandName: 'Yinkex_Media',
+  brandName: 'Yinkex Media',
   ownerName: 'Adeyinka Peluola',
   initials: 'YN',
   role: 'Digital Services Professional',
