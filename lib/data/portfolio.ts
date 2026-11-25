@@ -41,7 +41,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     description: 'Essays, research write-ups, and other writing samples.',
     samples: [
       {
-        title: 'History Essay Sample',
+        title: 'Research Essay Sample',
         description: 'A research essay sample',
         format: 'MLA Style',
         image: 'https://drive.google.com/thumbnail?id=1_xBnHXzHKur4eqIOdpyiGVSFTQOAMDnw&sz=w1200',
@@ -97,7 +97,7 @@ export const portfolioGroups: PortfolioGroup[] = [
         href: 'https://docs.google.com/document/d/19BxlYHwOxcR059lRQAmITiq52qj9Rr5ttHIt-5u328w/edit?usp=sharing',
       },
       {
-        title: 'Essay Sample',
+        title: 'Research Essay Sample',
         description: 'An essay writing sample',
         format: 'MLA Style',
         image: 'https://drive.google.com/thumbnail?id=1tk7PnYTI2xlYMFxWPA7rlACl00BnSh52Tyrflgj5nag&sz=w1200',
