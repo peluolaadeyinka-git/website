@@ -49,8 +49,8 @@ export const portfolioGroups: PortfolioGroup[] = [
       },
       {
         title: 'Article Sample',
-        description: 'An article writing sample',
-        format: 'LinkedIn Post',
+        description: 'A Tech Article for a Tech company',
+        format: 'Blog Article',
         image: 'https://drive.google.com/thumbnail?id=1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw&sz=w1200',
         href: 'https://docs.google.com/document/d/1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw/edit?usp=sharing',
       },
