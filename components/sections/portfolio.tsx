@@ -38,7 +38,7 @@ export function Portfolio() {
               {group.samples.length > 0 ? (
                 <ul className="mt-8 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
                   {group.samples.map((sample, i) => (
-                    <Reveal as="li" key={sample.title} delay={(i % 3) * 100}>
+                    <Reveal as="li" key={`${sample.title}-${i}`} delay={(i % 3) * 100}>
                       <SampleCard sample={sample} />
                     </Reveal>
                   ))}
