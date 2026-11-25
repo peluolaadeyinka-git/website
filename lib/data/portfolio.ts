@@ -54,6 +54,13 @@ export const portfolioGroups: PortfolioGroup[] = [
         image: 'https://drive.google.com/thumbnail?id=1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw&sz=w1200',
         href: 'https://docs.google.com/document/d/1F3beWkVLOYws2m8z4LI2FlKxHwSNFX9HVvIt-Sk7clw/edit?usp=sharing',
       },
+      {
+        title: 'Essay Sample',
+        description: 'An essay writing sample',
+        format: 'MLA',
+        image: 'https://drive.google.com/thumbnail?id=1tk7PnYTI2xlYMFxWPA7rlACl00BnSh52Tyrflgj5nag&sz=w1200',
+        href: 'https://docs.google.com/document/d/1tk7PnYTI2xlYMFxWPA7rlACl00BnSh52Tyrflgj5nag/edit?usp=sharing',
+      },
     ],
   },
   {
