@@ -1,3 +1,7 @@
+/**
+ * Legacy case-study data. The homepage portfolio now uses lib/data/portfolio.ts
+ * for service-grouped sample cards.
+ */
 export type Project = {
   slug: string
   title: string
