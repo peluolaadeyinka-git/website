@@ -149,7 +149,7 @@ export const portfolioGroups: PortfolioGroup[] = [
         title: 'Research Essay Sample',
         description: 'A research essay sample',
         format: 'MLA Style',
-        image: 'https://drive.google.com/thumbnail?id=1bkgrMD8w8wmWKWghxp9noSt7zFNupEJC7RpQ8MGS9Cw&sz=w1200',
+        image: 'https://drive.google.com/thumbnail?id=1bkgrMD8w8wmWKWghxp9noSt7zFNupEJC7RpQ8MGS9Cw&sz=w1200&v=2',
         href: 'https://docs.google.com/document/d/1bkgrMD8w8wmWKWghxp9noSt7zFNupEJC7RpQ8MGS9Cw/edit?usp=sharing',
       },
     ],
