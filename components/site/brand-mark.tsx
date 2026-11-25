@@ -1,17 +1,17 @@
-import { siteConfig } from '@/lib/site-config'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
-/** Placeholder logo — swap for your own <Image src="/logo.svg" /> when ready. */
+/** Your brand logo. Change the src here if you rename the file in /public/images. */
 export function BrandMark({ className }: { className?: string }) {
   return (
-    <span
-      aria-hidden="true"
-      className={cn(
-        'inline-flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-blue-500 font-mono text-xs font-bold text-white shadow-lg shadow-primary/30',
-        className,
-      )}
-    >
-      {siteConfig.initials}
+    <span className={cn('relative inline-flex size-9 shrink-0 items-center justify-center', className)}>
+      <Image
+        src="/images/logo.jpg"
+        alt=""
+        fill
+        sizes="36px"
+        className="object-contain"
+      />
     </span>
   )
 }
