@@ -29,6 +29,7 @@ export function SiteFooter() {
               <BrandMark />
               <span className="font-semibold tracking-tight">{siteConfig.brandName}</span>
             </Link>
+            <p className="mt-2 text-xs text-white/70">Founded by {siteConfig.ownerName}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed">{siteConfig.description}</p>
             <p className="mt-3 text-xs text-white/70">{siteConfig.headline}</p>
             <ul className="mt-6 flex flex-wrap gap-2">
