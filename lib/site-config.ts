@@ -6,7 +6,7 @@
 export const siteConfig = {
   brandName: 'Yinkex Media',
   ownerName: 'Adeyinka Peluola',
-  initials: 'YN',
+  initials: 'YM',
   role: 'Digital Services Professional',
   headline: 'Writer · Digital Marketer · Customer Support Professional',
   description:
