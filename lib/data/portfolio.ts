@@ -117,6 +117,20 @@ export const portfolioGroups: PortfolioGroup[] = [
         image: 'https://drive.google.com/thumbnail?id=1B_v1eyubj0KPaO1RHC-sJ72rAOC2QUhM6S9SXBaCuMw&sz=w1200',
         href: 'https://docs.google.com/document/d/1B_v1eyubj0KPaO1RHC-sJ72rAOC2QUhM6S9SXBaCuMw/edit?usp=sharing',
       },
+      {
+        title: 'Research Essay Sample',
+        description: 'A research essay sample',
+        format: 'Chicago Style',
+        image: 'https://drive.google.com/thumbnail?id=1qTNAFKoQ0xYwU4BwxAgR5LOMum_1-OmvQyKJwGE7xbA&sz=w1200',
+        href: 'https://docs.google.com/document/d/1qTNAFKoQ0xYwU4BwxAgR5LOMum_1-OmvQyKJwGE7xbA/edit?usp=sharing',
+      },
+      {
+        title: 'Research Essay Sample',
+        description: 'A research essay sample',
+        format: 'Chicago Style',
+        image: 'https://drive.google.com/thumbnail?id=18HKqwzEYQYhpKjdTvnUcXj2R4kVPR2qE4qVr4OEjcsM&sz=w1200',
+        href: 'https://docs.google.com/document/d/18HKqwzEYQYhpKjdTvnUcXj2R4kVPR2qE4qVr4OEjcsM/edit?usp=sharing',
+      },
     ],
   },
   {
