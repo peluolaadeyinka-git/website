@@ -131,6 +131,20 @@ export const portfolioGroups: PortfolioGroup[] = [
         image: 'https://drive.google.com/thumbnail?id=18HKqwzEYQYhpKjdTvnUcXj2R4kVPR2qE4qVr4OEjcsM&sz=w1200',
         href: 'https://docs.google.com/document/d/18HKqwzEYQYhpKjdTvnUcXj2R4kVPR2qE4qVr4OEjcsM/edit?usp=sharing',
       },
+      {
+        title: 'Article Sample',
+        description: 'A Tech Article for a Tech company',
+        format: 'Blog Article',
+        image: 'https://drive.google.com/thumbnail?id=19BxlYHwOxcR059lRQAmITiq52qj9Rr5ttHIt-5u328w&sz=w1200',
+        href: 'https://docs.google.com/document/d/19BxlYHwOxcR059lRQAmITiq52qj9Rr5ttHIt-5u328w/edit?usp=sharing',
+      },
+      {
+        title: 'Article Sample',
+        description: 'A Tech Article for a Tech company',
+        format: 'Blog Article',
+        image: 'https://drive.google.com/thumbnail?id=1Ei8I4y3q_gee6_oOLQKacp8u4nefoFa8KWwUJvwaL2Q&sz=w1200',
+        href: 'https://docs.google.com/document/d/1Ei8I4y3q_gee6_oOLQKacp8u4nefoFa8KWwUJvwaL2Q/edit?usp=sharing',
+      },
     ],
   },
   {
