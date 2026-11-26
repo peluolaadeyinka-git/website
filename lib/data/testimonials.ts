@@ -110,13 +110,13 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Upwork Client',
-    date: 'October 8, 2021',
-    // Rating only — this reviewer left no written comment on Upwork.
-    rating: 4.5,
-    href: upworkReviewUrls.spotifyPlaylist,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner-28323529.png',
+    name: 'Femi Saxman',
+    date: '02/01/22',
+    avatar: 'https://pictures-nigeria.jijistatic.net/83903313_OTYtOTYtNGZlYjk4MGYxYQ.jpg',
+    review: 'Great job, fantastic work, I will make more orders',
+    rating: 5,
+    href: testimonialSourceUrl,
+    sourceLabel: 'Jiji',
   },
   {
     name: 'George',
@@ -127,13 +127,13 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Femi Saxman',
-    date: '02/01/22',
-    avatar: 'https://pictures-nigeria.jijistatic.net/83903313_OTYtOTYtNGZlYjk4MGYxYQ.jpg',
-    review: 'Great job, fantastic work, I will make more orders',
-    rating: 5,
-    href: testimonialSourceUrl,
-    sourceLabel: 'Jiji',
+    name: 'Upwork Client',
+    date: 'October 8, 2021',
+    // Rating only — this reviewer left no written comment on Upwork.
+    rating: 4.5,
+    href: upworkReviewUrls.spotifyPlaylist,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28323529.png',
   },
   {
     name: 'D22 products',
