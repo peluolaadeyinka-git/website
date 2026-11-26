@@ -47,10 +47,10 @@ export function Testimonials() {
                         href={t.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`View ${t.name}'s review on Jiji`}
+                        aria-label={`View ${t.name}'s review on ${t.sourceLabel}`}
                         className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
                       >
-                        View on Jiji
+                        View on {t.sourceLabel}
                         <ArrowUpRight className="size-3" aria-hidden="true" />
                       </a>
                     </div>
