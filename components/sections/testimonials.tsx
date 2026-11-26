@@ -70,8 +70,9 @@ export function Testimonials() {
                     </div>
                   </figcaption>
                   {t.rating ? (
-                    <div className="mt-5">
+                    <div className="mt-5 flex items-center gap-2">
                       <RatingStars rating={t.rating} />
+                      <span className="text-sm font-medium text-muted-foreground">{t.rating.toFixed(1)}</span>
                     </div>
                   ) : null}
                   {t.review ? (
