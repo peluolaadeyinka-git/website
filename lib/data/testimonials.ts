@@ -145,3 +145,10 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
 ]
+
+/** Shared summary used by the service reviews section and hero review link. */
+export function getTestimonialSummary() {
+  const rated = testimonials.filter((t): t is Testimonial & { rating: number } => typeof t.rating === 'number')
+  const average = rated.length > 0 ? rated.reduce((sum, t) => sum + t.rating, 0) / rated.length : 0
+  return { average, count: testimonials.length, hasRatings: rated.length > 0 }
+}

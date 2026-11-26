@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { ArrowUpRight, MessageSquareQuote, Star } from 'lucide-react'
-import { testimonials, type Testimonial } from '@/lib/data/testimonials'
+import { getTestimonialSummary, testimonials } from '@/lib/data/testimonials'
 import { Reveal } from '@/components/site/reveal'
 
 function initialsOf(name: string) {
@@ -15,8 +15,7 @@ function initialsOf(name: string) {
 export function ServiceReviews() {
   if (testimonials.length === 0) return null
 
-  const rated = testimonials.filter((t): t is Testimonial & { rating: number } => typeof t.rating === 'number')
-  const average = rated.length > 0 ? rated.reduce((sum, t) => sum + t.rating, 0) / rated.length : 0
+  const { average, count } = getTestimonialSummary()
 
   return (
     <section id="reviews" aria-labelledby="reviews-title" className="scroll-mt-24 border-t pt-12">
@@ -32,7 +31,7 @@ export function ServiceReviews() {
             <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
             <span className="font-medium">{average.toFixed(1)}</span>
             <span>
-              ({testimonials.length} {testimonials.length === 1 ? 'review' : 'reviews'})
+              ({count} {count === 1 ? 'review' : 'reviews'})
             </span>
           </p>
         </div>

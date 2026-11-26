@@ -11,9 +11,11 @@ import {
   Layers,
   MessageCircle,
   Sparkles,
+  Star,
   Wallet,
 } from 'lucide-react'
 import { getServiceBySlug, services, type ServiceSection } from '@/lib/data/services'
+import { getTestimonialSummary } from '@/lib/data/testimonials'
 import { siteConfig, whatsappLink } from '@/lib/site-config'
 import { PageHero } from '@/components/site/page-hero'
 import { CtaLink } from '@/components/site/cta-link'
@@ -49,6 +51,7 @@ export default async function ServicePage({ params }: Params) {
   const hireHref = `/?service=${service.slug}#contact`
   const related = services.filter((s) => s.slug !== service.slug).slice(0, 3)
   const whatsapp = whatsappLink(`Hi ${siteConfig.ownerName}, I'm interested in your "${service.title}" service.`)
+  const reviewSummary = getTestimonialSummary()
 
   return (
     <>
@@ -67,6 +70,12 @@ export default async function ServicePage({ params }: Params) {
           <CtaLink href="#pricing" size="lg" variant="outlineLight">
             Pricing & Packages
           </CtaLink>
+          {reviewSummary.count > 0 ? (
+            <CtaLink href="#reviews" size="lg" variant="outlineLight">
+              <Star className="fill-amber-400 text-amber-400" aria-hidden="true" />
+              {reviewSummary.average.toFixed(1)} ({reviewSummary.count} {reviewSummary.count === 1 ? 'review' : 'reviews'})
+            </CtaLink>
+          ) : null}
         </div>
       </PageHero>
 
