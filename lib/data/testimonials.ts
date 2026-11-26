@@ -4,6 +4,17 @@ export const testimonialSourceUrl = 'https://jiji.ng/opinions/sDEs8ek0S0GJHKD38W
 /** Public Upwork share link for the review below. */
 const upworkReviewUrl = 'https://www.upwork.com/ab/g/pub/wom/prx/eyJwZXJzb25VaWQiOiIxMTM5NTI1NzczMTI5NjYyNDY0IiwiY29udHJhY3RSaWQiOiIzMTA5NjIxOCIsImJhbm5lclR5cGUiOiJjb250cmFjdCIsImJhbm5lclZhcmlhbnQiOiJkZWZhdWx0Iiwid29tIjoiZmx2MiIsInJlZGlyZWN0IjoiZmxfcHJvZmlsZV9wcm9tbyJ9?network=twitter'
 
+const upworkReviewUrls = {
+  subsAndWatchTime:
+    'https://www.upwork.com/ab/g/pub/wom/prx/eyJwZXJzb25VaWQiOiIxMTM5NTI1NzczMTI5NjYyNDY0IiwiY29udHJhY3RSaWQiOiIzMDg4OTM4MSIsImJhbm5lclR5cGUiOiJjb250cmFjdCIsImJhbm5lclZhcmlhbnQiOiJkZWZhdWx0Iiwid29tIjoiZmx2MiIsInJlZGlyZWN0IjoiZmxfcHJvZmlsZV9wcm9tbyJ9?network=twitter',
+  youtubeChannelPromotion:
+    'https://www.upwork.com/ab/g/pub/wom/prx/eyJwZXJzb25VaWQiOiIxMTM5NTI1NzczMTI5NjYyNDY0IiwiY29udHJhY3RSaWQiOiIyODczMjA2OCIsImJhbm5lclR5cGUiOiJjb250cmFjdCIsImJhbm5lclZhcmlhbnQiOiJkZWZhdWx0Iiwid29tIjoiZmx2MiIsInJlZGlyZWN0IjoiZmxfcHJvZmlsZV9wcm9tbyJ9?network=twitter',
+  facebookAds:
+    'https://www.upwork.com/ab/g/pub/wom/prx/eyJwZXJzb25VaWQiOiIxMTM5NTI1NzczMTI5NjYyNDY0IiwiY29udHJhY3RSaWQiOiIyODQ2Njg5NSIsImJhbm5lclR5cGUiOiJjb250cmFjdCIsImJhbm5lclZhcmlhbnQiOiJkZWZhdWx0Iiwid29tIjoiZmx2MiIsInJlZGlyZWN0IjoiZmxfcHJvZmlsZV9wcm9tbyJ9?network=twitter',
+  spotifyPlaylist:
+    'https://www.upwork.com/ab/g/pub/wom/prx/eyJwZXJzb25VaWQiOiIxMTM5NTI1NzczMTI5NjYyNDY0IiwiY29udHJhY3RSaWQiOiIyODMyMzUyOSIsImJhbm5lclR5cGUiOiJjb250cmFjdCIsImJhbm5lclZhcmlhbnQiOiJkZWZhdWx0Iiwid29tIjoiZmx2MiIsInJlZGlyZWN0IjoiZmxfcHJvZmlsZV9wcm9tbyJ9?network=twitter',
+}
+
 export type Testimonial = {
   name: string
   /** Date as shown on the source, or supplied by the client. */
@@ -11,7 +22,7 @@ export type Testimonial = {
   review: string
   /** Optional avatar URL (local path or remote Jiji photo). */
   avatar?: string
-  /** Optional 1–5 star rating as shown on the source. */
+  /** Optional star rating from 1 to 5, including halves, as shown on the source. */
   rating?: number
   /** Source page for the review. */
   href: string
@@ -94,5 +105,41 @@ export const testimonials: Testimonial[] = [
     href: upworkReviewUrl,
     sourceLabel: 'Upwork',
     preview: '/images/upwork-review-banner.png',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'July 20, 2022',
+    review: 'You will get 1k subs and 4k hrs watch time to make you eligi...',
+    rating: 5,
+    href: upworkReviewUrls.subsAndWatchTime,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-30889381.png',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'November 19, 2021',
+    review: 'YouTube channel promotion. Great job, thanks',
+    rating: 5,
+    href: upworkReviewUrls.youtubeChannelPromotion,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28732068.png',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'October 24, 2021',
+    review: 'You will get a real YouTube video promotion via Facebook ads... He did a great job, will work with him again, thanks.',
+    rating: 5,
+    href: upworkReviewUrls.facebookAds,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28466895.png',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'October 8, 2021',
+    review: 'You will get Spotify playlist placement to targeted curators...',
+    rating: 4.5,
+    href: upworkReviewUrls.spotifyPlaylist,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28323529.png',
   },
 ]

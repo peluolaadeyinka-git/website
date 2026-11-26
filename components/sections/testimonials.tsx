@@ -13,6 +13,31 @@ function initialsOf(name: string) {
     .toUpperCase()
 }
 
+function RatingStars({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5 text-amber-400" aria-label={`Rated ${rating} out of 5`}>
+      {Array.from({ length: 5 }).map((_, idx) => {
+        const filled = rating >= idx + 1
+        const half = !filled && rating > idx
+        return (
+          <span key={idx} className="relative inline-flex size-4">
+            <Star className="absolute inset-0 size-4 text-muted" aria-hidden="true" />
+            {filled ? (
+              <Star className="absolute inset-0 size-4 fill-current" aria-hidden="true" />
+            ) : half ? (
+              <Star
+                className="absolute inset-0 size-4 fill-current"
+                style={{ clipPath: 'inset(0 50% 0 0)' }}
+                aria-hidden="true"
+              />
+            ) : null}
+          </span>
+        )
+      })}
+    </div>
+  )
+}
+
 export function Testimonials() {
   const hasTestimonials = testimonials.length > 0
 
@@ -69,14 +94,8 @@ export function Testimonials() {
                     </div>
                   </figcaption>
                   {t.rating ? (
-                    <div className="mt-5 flex gap-0.5 text-amber-400" aria-label={`Rated ${t.rating} out of 5`}>
-                      {Array.from({ length: 5 }).map((_, idx) => (
-                        <Star
-                          key={idx}
-                          className={idx < (t.rating ?? 0) ? 'size-4 fill-current' : 'size-4 text-muted'}
-                          aria-hidden="true"
-                        />
-                      ))}
+                    <div className="mt-5">
+                      <RatingStars rating={t.rating} />
                     </div>
                   ) : null}
                   <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/85">{t.review}</blockquote>
