@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import { ArrowUpRight, MessageSquareQuote, Star } from 'lucide-react'
+import { ArrowUpRight, MessageSquareQuote } from 'lucide-react'
 import { testimonials } from '@/lib/data/testimonials'
 import { Reveal } from '@/components/site/reveal'
 import { SectionHeading } from '@/components/site/section-heading'
+import { RatingStars } from '@/components/site/rating-stars'
 
 function initialsOf(name: string) {
   return name
@@ -11,31 +12,6 @@ function initialsOf(name: string) {
     .join('')
     .slice(0, 2)
     .toUpperCase()
-}
-
-function RatingStars({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-0.5 text-amber-400" aria-label={`Rated ${rating} out of 5`}>
-      {Array.from({ length: 5 }).map((_, idx) => {
-        const filled = rating >= idx + 1
-        const half = !filled && rating > idx
-        return (
-          <span key={idx} className="relative inline-flex size-4">
-            <Star className="absolute inset-0 size-4 text-muted" aria-hidden="true" />
-            {filled ? (
-              <Star className="absolute inset-0 size-4 fill-current" aria-hidden="true" />
-            ) : half ? (
-              <Star
-                className="absolute inset-0 size-4 fill-current"
-                style={{ clipPath: 'inset(0 50% 0 0)' }}
-                aria-hidden="true"
-              />
-            ) : null}
-          </span>
-        )
-      })}
-    </div>
-  )
 }
 
 export function Testimonials() {

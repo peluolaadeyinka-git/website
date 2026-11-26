@@ -19,6 +19,7 @@ import { PageHero } from '@/components/site/page-hero'
 import { CtaLink } from '@/components/site/cta-link'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { ServiceCard } from '@/components/services/service-card'
+import { ServiceReviews } from '@/components/services/service-reviews'
 import { cn } from '@/lib/utils'
 
 type Params = { params: Promise<{ slug: string }> }
@@ -157,6 +158,8 @@ export default async function ServicePage({ params }: Params) {
               <ComingSoon />
             )}
           </section>
+
+          <ServiceReviews />
         </div>
 
         <aside className="lg:col-span-4">
