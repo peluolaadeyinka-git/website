@@ -36,8 +36,18 @@ export type Testimonial = {
 /**
  * Genuine client reviews from the linked sources.
  * Wording and names are kept exactly as shown there.
+ * Upwork and Jiji reviews are interleaved, starting with Upwork.
  */
 export const testimonials: Testimonial[] = [
+  {
+    name: 'Upwork Client',
+    date: 'August 12, 2022',
+    review: 'Peluola did a wonderful job and got me real monthly listeners and new plays on my songs, I am so happy with my order! The marketing went really well!',
+    rating: 5,
+    href: upworkReviewUrl,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner.png',
+  },
   {
     name: 'Nnamdi Nwankwere',
     date: '30/03/22',
@@ -46,6 +56,15 @@ export const testimonials: Testimonial[] = [
     rating: 4,
     href: testimonialSourceUrl,
     sourceLabel: 'Jiji',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'October 24, 2021',
+    review: 'He did a great job, will work with him again, thanks.',
+    rating: 5,
+    href: upworkReviewUrls.facebookAds,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28466895.png',
   },
   {
     name: 'Boma',
@@ -57,6 +76,15 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
+    name: 'Upwork Client',
+    date: 'November 19, 2021',
+    review: 'Great job, thanks',
+    rating: 5,
+    href: upworkReviewUrls.youtubeChannelPromotion,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28732068.png',
+  },
+  {
     name: 'Mohammed Tatari Ali',
     date: '07/08/22',
     review: 'Honestly you’re the best client I’ve worked with on jiji',
@@ -65,12 +93,30 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
+    name: 'Upwork Client',
+    date: 'July 20, 2022',
+    // Rating only — this reviewer left no written comment on Upwork.
+    rating: 5,
+    href: upworkReviewUrls.subsAndWatchTime,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-30889381.png',
+  },
+  {
     name: 'MUSA MUSTAPHA',
     date: '01/05/22',
     review: 'It’s great',
     rating: 5,
     href: testimonialSourceUrl,
     sourceLabel: 'Jiji',
+  },
+  {
+    name: 'Upwork Client',
+    date: 'October 8, 2021',
+    // Rating only — this reviewer left no written comment on Upwork.
+    rating: 4.5,
+    href: upworkReviewUrls.spotifyPlaylist,
+    sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner-28323529.png',
   },
   {
     name: 'George',
@@ -97,50 +143,5 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     href: testimonialSourceUrl,
     sourceLabel: 'Jiji',
-  },
-  {
-    name: 'Upwork Client',
-    date: 'August 12, 2022',
-    review: 'Peluola did a wonderful job and got me real monthly listeners and new plays on my songs, I am so happy with my order! The marketing went really well!',
-    rating: 5,
-    href: upworkReviewUrl,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner.png',
-  },
-  {
-    name: 'Upwork Client',
-    date: 'July 20, 2022',
-    // Rating only — this reviewer left no written comment on Upwork.
-    rating: 5,
-    href: upworkReviewUrls.subsAndWatchTime,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner-30889381.png',
-  },
-  {
-    name: 'Upwork Client',
-    date: 'November 19, 2021',
-    review: 'Great job, thanks',
-    rating: 5,
-    href: upworkReviewUrls.youtubeChannelPromotion,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner-28732068.png',
-  },
-  {
-    name: 'Upwork Client',
-    date: 'October 24, 2021',
-    review: 'He did a great job, will work with him again, thanks.',
-    rating: 5,
-    href: upworkReviewUrls.facebookAds,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner-28466895.png',
-  },
-  {
-    name: 'Upwork Client',
-    date: 'October 8, 2021',
-    // Rating only — this reviewer left no written comment on Upwork.
-    rating: 4.5,
-    href: upworkReviewUrls.spotifyPlaylist,
-    sourceLabel: 'Upwork',
-    preview: '/images/upwork-review-banner-28323529.png',
   },
 ]
