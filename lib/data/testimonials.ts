@@ -137,7 +137,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Upwork Client',
     date: 'October 8, 2021',
-    review: 'You will get Spotify playlist placement to targeted curators...',
+    // Rating only — this reviewer left no written comment on Upwork.
     rating: 4.5,
     href: upworkReviewUrls.spotifyPlaylist,
     sourceLabel: 'Upwork',
