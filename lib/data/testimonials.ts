@@ -40,7 +40,7 @@ export type Testimonial = {
  */
 export const testimonials: Testimonial[] = [
   {
-    name: 'Upwork Client',
+    name: 'Rockelle S.',
     date: 'August 12, 2022',
     review: 'Peluola did a wonderful job and got me real monthly listeners and new plays on my songs, I am so happy with my order! The marketing went really well!',
     rating: 5,
@@ -58,7 +58,7 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Upwork Client',
+    name: 'Esther E.',
     date: 'October 24, 2021',
     review: 'He did a great job, will work with him again, thanks.',
     rating: 5,
@@ -76,7 +76,7 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Upwork Client',
+    name: 'Esther E.',
     date: 'November 19, 2021',
     review: 'Great job, thanks',
     rating: 5,
@@ -93,7 +93,7 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Upwork Client',
+    name: 'James D.',
     date: 'July 20, 2022',
     // Rating only — this reviewer left no written comment on Upwork.
     rating: 5,
@@ -127,7 +127,7 @@ export const testimonials: Testimonial[] = [
     sourceLabel: 'Jiji',
   },
   {
-    name: 'Upwork Client',
+    name: 'Oliver R.',
     date: 'October 8, 2021',
     // Rating only — this reviewer left no written comment on Upwork.
     rating: 4.5,
