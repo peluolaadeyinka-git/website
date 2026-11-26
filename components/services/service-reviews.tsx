@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import { ArrowUpRight, MessageSquareQuote } from 'lucide-react'
+import { ArrowUpRight, MessageSquareQuote, Star } from 'lucide-react'
 import { testimonials, type Testimonial } from '@/lib/data/testimonials'
-import { RatingStars } from '@/components/site/rating-stars'
 import { Reveal } from '@/components/site/reveal'
 
 function initialsOf(name: string) {
@@ -29,11 +28,14 @@ export function ServiceReviews() {
             </span>
             Reviews
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {average.toFixed(1)} ({testimonials.length} {testimonials.length === 1 ? 'review' : 'reviews'})
+          <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
+            <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+            <span className="font-medium">{average.toFixed(1)}</span>
+            <span>
+              ({testimonials.length} {testimonials.length === 1 ? 'review' : 'reviews'})
+            </span>
           </p>
         </div>
-        {rated.length > 0 ? <RatingStars rating={average} /> : null}
       </div>
 
       <ul className="mt-8 space-y-6">
@@ -59,7 +61,10 @@ export function ServiceReviews() {
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                   <p className="font-semibold">{t.name}</p>
                   {typeof t.rating === 'number' ? (
-                    <span className="text-sm font-medium text-muted-foreground">{t.rating.toFixed(2)}</span>
+                    <span className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                      <Star className="size-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
+                      {t.rating.toFixed(2)}
+                    </span>
                   ) : null}
                   <span className="text-sm text-muted-foreground">{t.date}</span>
                 </div>
