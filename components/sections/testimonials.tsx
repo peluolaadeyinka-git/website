@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MessageSquareQuote, Quote, Star } from 'lucide-react'
+import { ArrowUpRight, MessageSquareQuote, Quote, Star } from 'lucide-react'
 import { testimonials } from '@/lib/data/testimonials'
 import { Reveal } from '@/components/site/reveal'
 import { SectionHeading } from '@/components/site/section-heading'
@@ -55,9 +55,17 @@ export function Testimonials() {
                     )}
                     <div className="min-w-0">
                       <p className="font-semibold">{t.name}</p>
-                      <p className="truncate text-sm text-muted-foreground">
-                        {t.role} · {t.service}
-                      </p>
+                      <p className="text-sm text-muted-foreground">{t.date}</p>
+                      <a
+                        href={t.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${t.name}'s review on Jiji`}
+                        className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                      >
+                        View on Jiji
+                        <ArrowUpRight className="size-3" aria-hidden="true" />
+                      </a>
                     </div>
                   </figcaption>
                 </figure>
