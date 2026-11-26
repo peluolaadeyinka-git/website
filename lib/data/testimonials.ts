@@ -21,8 +21,6 @@ export type Testimonial = {
   date: string
   /** Optional comment; omit when the source has only a rating. */
   review?: string
-  /** Optional service/job title shown with the review on the source. */
-  serviceTitle?: string
   /** Optional avatar URL (local path or remote Jiji photo). */
   avatar?: string
   /** Optional star rating from 1 to 5, including halves, as shown on the source. */
@@ -44,7 +42,6 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Rockelle S.',
     date: 'August 12, 2022',
-    serviceTitle: 'You will get organic Spotify promotion that will increase streams and monthly listeners',
     review: 'Peluola did a wonderful job and got me real monthly listeners and new plays on my songs, I am so happy with my order! The marketing went really well!',
     rating: 5,
     href: upworkReviewUrl,
@@ -63,7 +60,6 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Esther E.',
     date: 'October 24, 2021',
-    serviceTitle: 'You will get a real YouTube video promotion via Facebook ads to gain views and likes',
     review: 'He did a great job, will work with him again, thanks.',
     rating: 5,
     href: upworkReviewUrls.facebookAds,
@@ -82,7 +78,6 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Esther E.',
     date: 'November 19, 2021',
-    serviceTitle: 'YouTube channel promotion.',
     review: 'Great job, thanks',
     rating: 5,
     href: upworkReviewUrls.youtubeChannelPromotion,
@@ -100,7 +95,6 @@ export const testimonials: Testimonial[] = [
   {
     name: 'James D.',
     date: 'July 20, 2022',
-    serviceTitle: 'You will get 1k subs and 4k hrs watch time to make you eligible for monetization (YPP)',
     // Rating only — this reviewer left no written comment on Upwork.
     rating: 5,
     href: upworkReviewUrls.subsAndWatchTime,
@@ -135,7 +129,6 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Oliver R.',
     date: 'October 8, 2021',
-    serviceTitle: 'You will get Spotify playlist placement to targeted curators.',
     // Rating only — this reviewer left no written comment on Upwork.
     rating: 4.5,
     href: upworkReviewUrls.spotifyPlaylist,

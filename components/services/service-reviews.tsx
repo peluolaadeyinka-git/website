@@ -63,7 +63,6 @@ export function ServiceReviews() {
                   ) : null}
                   <span className="text-sm text-muted-foreground">{t.date}</span>
                 </div>
-                {t.serviceTitle ? <p className="mt-2 text-sm font-medium">{t.serviceTitle}</p> : null}
                 {t.review ? (
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{t.review}</p>
                 ) : null}
