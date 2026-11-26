@@ -32,7 +32,20 @@ export function Testimonials() {
             {testimonials.map((t, i) => (
               <Reveal as="li" key={`${t.name}-${i}`} delay={i * 100}>
                 <figure className="relative flex h-full flex-col rounded-3xl border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
-                  <Quote className="size-8 text-primary/25" aria-hidden="true" />
+                  <figcaption className="flex items-center gap-3 border-b pb-5">
+                    {t.avatar ? (
+                      <Image src={t.avatar} alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
+                    ) : (
+                      <span className="flex size-11 items-center justify-center rounded-full bg-accent font-mono text-sm font-semibold text-accent-foreground" aria-hidden="true">
+                        {initialsOf(t.name)}
+                      </span>
+                    )}
+                    <div className="min-w-0">
+                      <p className="font-semibold">{t.name}</p>
+                      <p className="text-sm text-muted-foreground">{t.date}</p>
+                    </div>
+                  </figcaption>
+                  <Quote className="mt-5 size-8 text-primary/25" aria-hidden="true" />
                   {t.rating ? (
                     <div className="mt-4 flex gap-0.5 text-amber-400" aria-label={`Rated ${t.rating} out of 5`}>
                       {Array.from({ length: 5 }).map((_, idx) => (
@@ -45,29 +58,18 @@ export function Testimonials() {
                     </div>
                   ) : null}
                   <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/85">{t.review}</blockquote>
-                  <figcaption className="mt-6 flex items-center gap-3 border-t pt-5">
-                    {t.avatar ? (
-                      <Image src={t.avatar} alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
-                    ) : (
-                      <span className="flex size-11 items-center justify-center rounded-full bg-accent font-mono text-sm font-semibold text-accent-foreground" aria-hidden="true">
-                        {initialsOf(t.name)}
-                      </span>
-                    )}
-                    <div className="min-w-0">
-                      <p className="font-semibold">{t.name}</p>
-                      <p className="text-sm text-muted-foreground">{t.date}</p>
-                      <a
-                        href={t.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${t.name}'s review on Jiji`}
-                        className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-                      >
-                        View on Jiji
-                        <ArrowUpRight className="size-3" aria-hidden="true" />
-                      </a>
-                    </div>
-                  </figcaption>
+                  <div className="mt-6 border-t pt-5">
+                    <a
+                      href={t.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${t.name}'s review on Jiji`}
+                      className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                    >
+                      View on Jiji
+                      <ArrowUpRight className="size-3" aria-hidden="true" />
+                    </a>
+                  </div>
                 </figure>
               </Reveal>
             ))}

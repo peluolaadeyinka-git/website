@@ -11,6 +11,10 @@ const nextConfig = {
         hostname: 'drive.google.com',
         pathname: '/thumbnail',
       },
+      {
+        protocol: 'https',
+        hostname: 'pictures-nigeria.jijistatic.net',
+      },
     ],
   },
   async headers() {

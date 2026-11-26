@@ -6,7 +6,7 @@ export type Testimonial = {
   /** Date as shown on Jiji. */
   date: string
   review: string
-  /** Optional path to a client photo, e.g. /images/clients/jane.jpg */
+  /** Optional avatar URL (local path or remote Jiji photo). */
   avatar?: string
   /** Optional 1–5 star rating as shown on Jiji. */
   rating?: number
@@ -29,6 +29,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Boma',
     date: '22/11/22',
+    avatar: 'https://pictures-nigeria.jijistatic.net/48482710__96x96.jpg',
     review: 'Smooth business process and accurate service delivered',
     rating: 5,
     href: testimonialSourceUrl,
@@ -50,6 +51,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Nnamdi Nwankwere',
     date: '30/03/22',
+    avatar: 'https://pictures-nigeria.jijistatic.net/4563094__200x200.jpg',
     review: "Didn't know it'll work. Within a couple of days, everything got set up, on my way to monetization now. Thanks adeyinka",
     rating: 4,
     href: testimonialSourceUrl,
@@ -57,6 +59,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Femi Saxman',
     date: '02/01/22',
+    avatar: 'https://pictures-nigeria.jijistatic.net/83903313_OTYtOTYtNGZlYjk4MGYxYQ.jpg',
     review: 'Great job, fantastic work, I will make more orders',
     rating: 5,
     href: testimonialSourceUrl,
@@ -64,6 +67,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'D22 products',
     date: '26/09/21',
+    avatar: 'https://pictures-nigeria.jijistatic.net/193162628_MjAwLTIwMC03NjhjNmJmMzM1.jpg',
     review: 'Good service',
     rating: 5,
     href: testimonialSourceUrl,
