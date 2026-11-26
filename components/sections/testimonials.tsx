@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowUpRight, MessageSquareQuote, Quote, Star } from 'lucide-react'
+import { ArrowUpRight, MessageSquareQuote, Star } from 'lucide-react'
 import { testimonials } from '@/lib/data/testimonials'
 import { Reveal } from '@/components/site/reveal'
 import { SectionHeading } from '@/components/site/section-heading'
@@ -43,11 +43,20 @@ export function Testimonials() {
                     <div className="min-w-0">
                       <p className="font-semibold">{t.name}</p>
                       <p className="text-sm text-muted-foreground">{t.date}</p>
+                      <a
+                        href={t.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${t.name}'s review on Jiji`}
+                        className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                      >
+                        View on Jiji
+                        <ArrowUpRight className="size-3" aria-hidden="true" />
+                      </a>
                     </div>
                   </figcaption>
-                  <Quote className="mt-5 size-8 text-primary/25" aria-hidden="true" />
                   {t.rating ? (
-                    <div className="mt-4 flex gap-0.5 text-amber-400" aria-label={`Rated ${t.rating} out of 5`}>
+                    <div className="mt-5 flex gap-0.5 text-amber-400" aria-label={`Rated ${t.rating} out of 5`}>
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <Star
                           key={idx}
@@ -58,18 +67,6 @@ export function Testimonials() {
                     </div>
                   ) : null}
                   <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/85">{t.review}</blockquote>
-                  <div className="mt-6 border-t pt-5">
-                    <a
-                      href={t.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View ${t.name}'s review on Jiji`}
-                      className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-                    >
-                      View on Jiji
-                      <ArrowUpRight className="size-3" aria-hidden="true" />
-                    </a>
-                  </div>
                 </figure>
               </Reveal>
             ))}

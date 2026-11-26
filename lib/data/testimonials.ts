@@ -20,10 +20,11 @@ export type Testimonial = {
  */
 export const testimonials: Testimonial[] = [
   {
-    name: 'George',
-    date: '26/03/24',
-    review: "doesn't fail",
-    rating: 5,
+    name: 'Nnamdi Nwankwere',
+    date: '30/03/22',
+    avatar: 'https://pictures-nigeria.jijistatic.net/4563094__200x200.jpg',
+    review: "Didn't know it'll work. Within a couple of days, everything got set up, on my way to monetization now. Thanks adeyinka",
+    rating: 4,
     href: testimonialSourceUrl,
   },
   {
@@ -49,11 +50,10 @@ export const testimonials: Testimonial[] = [
     href: testimonialSourceUrl,
   },
   {
-    name: 'Nnamdi Nwankwere',
-    date: '30/03/22',
-    avatar: 'https://pictures-nigeria.jijistatic.net/4563094__200x200.jpg',
-    review: "Didn't know it'll work. Within a couple of days, everything got set up, on my way to monetization now. Thanks adeyinka",
-    rating: 4,
+    name: 'George',
+    date: '26/03/24',
+    review: "doesn't fail",
+    rating: 5,
     href: testimonialSourceUrl,
   },
   {
