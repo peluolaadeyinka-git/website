@@ -17,6 +17,8 @@ export type Testimonial = {
   href: string
   /** Label used for the source link, e.g. Jiji or Upwork. */
   sourceLabel: string
+  /** Optional preview image shown when hovering/focusing the source link. */
+  preview?: string
 }
 
 /**
@@ -91,5 +93,6 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     href: upworkReviewUrl,
     sourceLabel: 'Upwork',
+    preview: '/images/upwork-review-banner.png',
   },
 ]

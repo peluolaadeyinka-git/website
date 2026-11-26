@@ -43,16 +43,29 @@ export function Testimonials() {
                     <div className="min-w-0">
                       <p className="font-semibold">{t.name}</p>
                       <p className="text-sm text-muted-foreground">{t.date}</p>
-                      <a
-                        href={t.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${t.name}'s review on ${t.sourceLabel}`}
-                        className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-                      >
-                        View on {t.sourceLabel}
-                        <ArrowUpRight className="size-3" aria-hidden="true" />
-                      </a>
+                      <span className="group/preview relative mt-1 inline-flex">
+                        <a
+                          href={t.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View ${t.name}'s review on ${t.sourceLabel}`}
+                          className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                        >
+                          View on {t.sourceLabel}
+                          <ArrowUpRight className="size-3" aria-hidden="true" />
+                        </a>
+                        {t.preview ? (
+                          <span className="pointer-events-none absolute top-full left-0 z-30 mt-2 w-64 origin-top-left scale-95 opacity-0 shadow-xl transition duration-200 group-focus-within/preview:scale-100 group-focus-within/preview:opacity-100 group-hover/preview:scale-100 group-hover/preview:opacity-100 sm:w-72">
+                            <Image
+                              src={t.preview}
+                              alt={`${t.sourceLabel} review preview`}
+                              width={1200}
+                              height={628}
+                              className="h-auto w-full rounded-xl border bg-card object-cover"
+                            />
+                          </span>
+                        ) : null}
+                      </span>
                     </div>
                   </figcaption>
                   {t.rating ? (
