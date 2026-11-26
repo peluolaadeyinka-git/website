@@ -19,7 +19,8 @@ export type Testimonial = {
   name: string
   /** Date as shown on the source, or supplied by the client. */
   date: string
-  review: string
+  /** Optional comment; omit when the source has only a rating. */
+  review?: string
   /** Optional avatar URL (local path or remote Jiji photo). */
   avatar?: string
   /** Optional star rating from 1 to 5, including halves, as shown on the source. */
@@ -109,7 +110,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Upwork Client',
     date: 'July 20, 2022',
-    review: 'You will get 1k subs and 4k hrs watch time to make you eligi...',
+    // Rating only — this reviewer left no written comment on Upwork.
     rating: 5,
     href: upworkReviewUrls.subsAndWatchTime,
     sourceLabel: 'Upwork',

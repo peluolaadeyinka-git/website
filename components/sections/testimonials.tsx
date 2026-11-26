@@ -98,7 +98,11 @@ export function Testimonials() {
                       <RatingStars rating={t.rating} />
                     </div>
                   ) : null}
-                  <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/85">{t.review}</blockquote>
+                  {t.review ? (
+                    <blockquote className="mt-4 flex-1 leading-relaxed text-foreground/85">{t.review}</blockquote>
+                  ) : (
+                    <div className="mt-4 flex-1" aria-hidden="true" />
+                  )}
                 </figure>
               </Reveal>
             ))}
