@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight, MessageSquareText } from 'lucide-react'
+import { ArrowUpRight, MessageSquareText, Star } from 'lucide-react'
 import type { Service } from '@/lib/data/services'
+import { getTestimonialSummary } from '@/lib/data/testimonials'
+
+const reviewSummary = getTestimonialSummary()
 
 export function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon
@@ -18,6 +21,15 @@ export function ServiceCard({ service }: { service: Service }) {
         <span className="absolute top-4 left-4 flex size-11 items-center justify-center rounded-xl border border-white/20 bg-navy/60 text-white backdrop-blur-md">
           <Icon className="size-5" aria-hidden="true" />
         </span>
+        {reviewSummary.count > 0 ? (
+          <span
+            aria-label={`Rated ${reviewSummary.average.toFixed(1)} from ${reviewSummary.count} reviews`}
+            className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full border border-white/20 bg-navy/60 px-2.5 py-1.5 text-xs font-medium text-white backdrop-blur-md"
+          >
+            <Star className="size-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
+            {reviewSummary.average.toFixed(1)} ({reviewSummary.count})
+          </span>
+        ) : null}
       </div>
 
       <div className="flex flex-1 flex-col p-6">
