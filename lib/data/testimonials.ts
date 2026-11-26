@@ -127,7 +127,7 @@ export const testimonials: Testimonial[] = [
   {
     name: 'Upwork Client',
     date: 'October 24, 2021',
-    review: 'You will get a real YouTube video promotion via Facebook ads... He did a great job, will work with him again, thanks.',
+    review: 'He did a great job, will work with him again, thanks.',
     rating: 5,
     href: upworkReviewUrls.facebookAds,
     sourceLabel: 'Upwork',
